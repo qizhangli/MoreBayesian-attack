@@ -1,5 +1,5 @@
 # MoreBayesian-attack
-Code for our ICLR 2023 paper [Making Substitute Models More Bayesian Can Enhance Transferability of Adversarial Examples](https://github.com/qizhangli/MoreBayesian-attack).
+Code for our ICLR 2023 paper [Making Substitute Models More Bayesian Can Enhance Transferability of Adversarial Examples](https://openreview.net/pdf?id=bjPPypbLre).
 
 ## Requirements
 * Python 3.8.8
