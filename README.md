@@ -21,6 +21,7 @@ Perform our finetune with SWAG:
 ```
 python3 finetune.py --data_path ${IMAGENET_DIR} --save-dir ${MODEL_SAVE_DIR}
 ```
+You can download our finetuned ResNet-50 at [Google Drive](https://drive.google.com/drive/folders/1rOa4nFGsxrw-30_DJ77X_xqj__vhE_TN?usp=share_link).
 ### Attack
 Perform attack:
 ```
