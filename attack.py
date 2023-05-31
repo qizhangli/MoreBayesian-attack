@@ -64,15 +64,11 @@ def main():
         model_list = []
         for model_ind in range(args.n_models):
             model_list.append(copy.deepcopy(mean_model))
-            var_avg = 0
-            c = 0
             noise_dict = OrderedDict()
             for (name, param_mean), param_sqmean, param_cur in zip(mean_model.named_parameters(), sqmean_model.parameters(), model_list[-1].parameters()):
                 var = torch.clamp(param_sqmean.data - param_mean.data**2, 1e-30)
                 var = var + args.beta
                 noise_dict[name] = var.sqrt() * torch.randn_like(param_mean, requires_grad=False)
-                c += param_mean.numel()
-
             for (name, param_cur), (_, noise) in zip(model_list[-1].named_parameters(), noise_dict.items()):
                 param_cur.data.add_(noise, alpha=args.scale)
         return model_list
